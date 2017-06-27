@@ -13,9 +13,9 @@ namespace JQueryWebApiDemo.Controllers
     {
         private static List<Task> tasks = new List<Task>
         {
-            new Task() { ID=1, Name="Groceries", Description="Do the groceries", Done=false },
-            new Task() { ID=2, Name="Buy a car", Description="Choose brand and model", Done=false },
-            new Task() { ID=3, Name="Clean dishes", Description="Clean the dishes", Done=false }
+            new Task() { Id=1, Name="Groceries", Description="Do the groceries", Done=false },
+            new Task() { Id=2, Name="Buy a car", Description="Choose brand and model", Done=false },
+            new Task() { Id=3, Name="Clean dishes", Description="Clean the dishes", Done=false }
         };
 
         [HttpGet]

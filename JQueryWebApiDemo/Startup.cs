@@ -19,7 +19,10 @@ namespace JQueryWebApiDemo
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            
+
+            // CamelCaseSerializer
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             appBuilder.UseWebApi(config);
         }
     }
