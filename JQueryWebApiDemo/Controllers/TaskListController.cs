@@ -8,7 +8,7 @@ using JQueryWebApiDemo.Models;
 
 namespace JQueryWebApiDemo.Controllers
 {
-    [RoutePrefix("/api/tasks")]
+    [RoutePrefix("api/tasks")]
     public class TaskListController : ApiController
     {
         private static List<Task> tasks = new List<Task>
