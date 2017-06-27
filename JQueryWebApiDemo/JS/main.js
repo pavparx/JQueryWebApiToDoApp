@@ -32,20 +32,15 @@ function displayTable(param) {
         for (var i = 0; i < length; i++) {
             // creates a table row
             var row = document.createElement("tr");
- 
-            for (var j = 0; j < length; j++) {
-                // Create a <td> element and a text node, make the text
-                // node the contents of the <td>, and put the <td> at
-                // the end of the table row
                 var cell = document.createElement("td");
-                var cellText = document.createTextNode(param[j]);
+                var cellText = document.createTextNode(param[i]);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
-            }
-
+            
+                tblBody.appendChild(row);
         }
         // add the row to the end of the table body
-        tblBody.appendChild(row);
+        //tblBody.appendChild(row);
         // put the <tbody> in the <table>
         tbl.appendChild(tblBody);
         // appends <table> into <body>
