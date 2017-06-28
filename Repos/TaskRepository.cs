@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using System.Data.Entity;
+
 
 namespace Repos
 {
     public class TaskRepository
     {
+        //DbContextClass Db = new DbContextClass();
+
         private static List<Models.Task> tasks = new List<Models.Task>
         {
             new Models.Task() {Id=1, Name="Task1", Description="Desc1", Done=false },
@@ -17,8 +21,11 @@ namespace Repos
         };
         public List<Models.Task> GetTasks()
         {
-            return tasks;
 
+            //var query = from data in Db
+            //            orderby data.Id
+            //            select data;
+            return tasks;
         }
     }
 }
