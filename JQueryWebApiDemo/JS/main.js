@@ -15,7 +15,7 @@
 
         function querySucceeded(data) {
             displayTable(data);
-            console.log(data[0].Description);
+            console.log(data[0].id);
         }
 
         function displayTable(param) {
@@ -59,7 +59,7 @@
             tblBody.appendChild(titlerow);
 
             // creating all cells
-            for (var i = 0; i < param.length;i++) {
+            for (var i = 0; i < param.length; i++) {
                 var row = document.createElement("tr");
                 var cell = document.createElement("td");
                 var cellText = document.createTextNode(param[i].id);
@@ -70,6 +70,8 @@
                 var cellText2 = document.createTextNode(param[i].name);
                 cell2.appendChild(cellText2);
                 row.appendChild(cell2);
+
+
 
                 var cell3 = document.createElement("td");
                 var cellText3 = document.createTextNode(param[i].description);
@@ -83,28 +85,25 @@
 
 
                 tblBody.appendChild(row);
+
+
+                tbl.appendChild(tblBody);
+
+                body.appendChild(tbl);
+
+                tbl.setAttribute("border", "2");
+
+
+
             }
-            
-            
-        
-            // add the row to the end of the table body
-            //tblBody.appendChild(row);
-            // put the <tbody> in the <table>
-            tbl.appendChild(tblBody);
-            // appends <table> into <body>
-            body.appendChild(tbl);
-            // sets the border attribute of tbl to 2;
-            tbl.setAttribute("border", "2");
 
 
+            function queryFailed(jqXHR, textStatus) {
+                var msg = 'Error retreiving data. ' + jqXHR + " " + textStatus;
+                console.log(msg);
+            }
         }
-
-
-        function queryFailed(jqXHR, textStatus) {
-            var msg = 'Error retreiving data. ' + jqXHR + " " + textStatus;
-            console.log(msg);
-        }
-
         getTasks();
     });
+    
 })();
