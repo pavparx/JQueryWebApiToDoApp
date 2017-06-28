@@ -1,4 +1,7 @@
 ﻿(function () {
+
+
+
     $(document).ready(function () {
 
         var tasks = {
@@ -6,6 +9,8 @@
             type: 'GET',
             dataType: 'json'
         };
+        var fetchedData;
+        //var keyword = $('#filterTasks').val();
 
         // TODO: do this on load    
 
@@ -14,23 +19,42 @@
         }
 
         function querySucceeded(data) {
+            fetchedData = data;
             displayTable(data);
             console.log(data[0].id);
         }
+
+        function queryFailed(jqXHR, textStatus) {
+            var msg = 'Error retreiving data. ' + jqXHR + " " + textStatus;
+            console.log(msg);
+        }
+
+        $("#filterTasks").keyup(function () {
+            var keyword = $(this).val();
+            console.log(keyword);
+            var tempArray = new Array();
+
+            for (item in fetchedData) {
+                if ((fetchedData[item].name.indexOf(keyword) !== -1) || (fetchedData[item].description.indexOf(keyword) !== -1)) {
+                    tempArray.push(fetchedData[item]);
+                }
+                
+                displayTable(tempArray);
+            }
+        });
+
+
+
+       
+
 
         function displayTable(param) {
 
             var length = Object.keys(param).length;
 
-            // get the reference for the body
-            var body = document.getElementsByTagName("body")[0];
-            //var body = jQuery('body').first(); 
-
-
             // creates a <table> element and a <tbody> element
             var tbl = document.createElement("table");
             //var tbl = jQuery('<table />');
-
 
             var tblBody = document.createElement("tbody");
             //var tblBody = jQuery('<tbody />');
@@ -71,8 +95,6 @@
                 cell2.appendChild(cellText2);
                 row.appendChild(cell2);
 
-
-
                 var cell3 = document.createElement("td");
                 var cellText3 = document.createTextNode(param[i].description);
                 cell3.appendChild(cellText3);
@@ -86,24 +108,20 @@
 
                 tblBody.appendChild(row);
 
-
                 tbl.appendChild(tblBody);
 
-                body.appendChild(tbl);
+                var results = jQuery('#results');
+                results.empty();
+                results.append(tbl);
 
                 tbl.setAttribute("border", "2");
 
-
-
-            }
-
-
-            function queryFailed(jqXHR, textStatus) {
-                var msg = 'Error retreiving data. ' + jqXHR + " " + textStatus;
-                console.log(msg);
+                
             }
         }
+
         getTasks();
+
     });
-    
+
 })();
