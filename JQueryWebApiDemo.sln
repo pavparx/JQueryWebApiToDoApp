@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQueryWebApiDemo", "JQueryWebApiDemo\JQueryWebApiDemo.csproj", "{D864E14A-E291-4C1C-A8CE-59DF65375EAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{4332F732-A3D7-46AC-9C49-1445EBA65996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksRepository", "Repos\TasksRepository.csproj", "{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D864E14A-E291-4C1C-A8CE-59DF65375EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D864E14A-E291-4C1C-A8CE-59DF65375EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D864E14A-E291-4C1C-A8CE-59DF65375EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4332F732-A3D7-46AC-9C49-1445EBA65996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4332F732-A3D7-46AC-9C49-1445EBA65996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4332F732-A3D7-46AC-9C49-1445EBA65996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4332F732-A3D7-46AC-9C49-1445EBA65996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

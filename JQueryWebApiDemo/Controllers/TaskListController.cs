@@ -4,25 +4,23 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using JQueryWebApiDemo.Models;
+using Models;
+using Repos;
 
 namespace JQueryWebApiDemo.Controllers
 {
     [RoutePrefix("api/tasks")]
     public class TaskListController : ApiController
     {
-        private static List<Task> tasks = new List<Task>
-        {
-            new Task() { Id=1, Name="Groceries", Description="Do the groceries", Done=false },
-            new Task() { Id=2, Name="Buy a car", Description="Choose brand and model", Done=false },
-            new Task() { Id=3, Name="Clean dishes", Description="Clean the dishes", Done=false }
-        };
+
+        TaskRepository RepoVar = new TaskRepository();
 
         [HttpGet]
         [Route]
         public List<Task> GetTasks()
         {
-            return tasks;
+
+            return RepoVar.GetTasks();
         }
 
 
