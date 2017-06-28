@@ -133,6 +133,10 @@
     <Compile Include="Migrations\201706281512352_InitialMigration.Designer.cs">
       <DependentUpon>201706281512352_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706281535365_TestSeed.cs" />
+    <Compile Include="Migrations\201706281535365_TestSeed.Designer.cs">
+      <DependentUpon>201706281535365_TestSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -152,6 +156,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706281512352_InitialMigration.resx">
       <DependentUpon>201706281512352_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706281535365_TestSeed.resx">
+      <DependentUpon>201706281535365_TestSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
