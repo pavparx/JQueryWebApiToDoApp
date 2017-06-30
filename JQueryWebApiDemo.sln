@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQueryWebApiDemo", "JQueryW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{4332F732-A3D7-46AC-9C49-1445EBA65996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksRepository", "Repos\TasksRepository.csproj", "{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repos\Repositories.csproj", "{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRepositories", "IRepositories\IRepositories.csproj", "{253F8708-C1B0-46CE-89D8-99011A27BA63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2AE6F6-E4D4-423A-9E07-4B3AB59591AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253F8708-C1B0-46CE-89D8-99011A27BA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253F8708-C1B0-46CE-89D8-99011A27BA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253F8708-C1B0-46CE-89D8-99011A27BA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253F8708-C1B0-46CE-89D8-99011A27BA63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

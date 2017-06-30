@@ -144,13 +144,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IRepositories\IRepositories.csproj">
+      <Project>{253f8708-c1b0-46ce-89d8-99011a27ba63}</Project>
+      <Name>IRepositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{4332f732-a3d7-46ac-9c49-1445eba65996}</Project>
       <Name>Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Repos\TasksRepository.csproj">
+    <ProjectReference Include="..\Repos\Repositories.csproj">
       <Project>{3d2ae6f6-e4d4-423a-9e07-4b3ab59591af}</Project>
-      <Name>TasksRepository</Name>
+      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
