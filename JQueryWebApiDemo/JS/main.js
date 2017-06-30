@@ -21,7 +21,6 @@
         function querySucceeded(data) {
             fetchedData = data;
             displayTable(data);
-            console.log(data[0].id);
         }
 
         function queryFailed(jqXHR, textStatus) {

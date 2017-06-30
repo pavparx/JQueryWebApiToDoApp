@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using System.Data.Entity;
-
+using IRepositories;
 
 namespace Repos
 {
-    public class TaskRepository
+    public class TaskRepository : ITaskRepository
     {
 
 

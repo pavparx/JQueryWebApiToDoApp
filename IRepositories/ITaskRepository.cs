@@ -7,7 +7,7 @@ using Models;
 
 namespace IRepositories
 {
-    interface ITaskRepository
+    public interface ITaskRepository
     {
 
         List<Models.Task> GetTasks();
