@@ -11,17 +11,19 @@ namespace Repos
 {
     public class UserRepository : IUserRepository
     {
-        DbContextClass.DbAccess Db = new DbContextClass.DbAccess();
         public List<User> GetAll()
         {
 
+            using (DbContextClass.DbAccess Db = new DbContextClass.DbAccess())
+            {
+                IQueryable<User> query = from data in Db.Users
+                                         orderby data.Id
+                                         select data;
 
-            IQueryable<User> query = from data in Db.Users
-                                     orderby data.Id
-                                     select data;
+                List<User> results = new List<User>(query);
 
-            List<User> results = new List<User>(query);
-            return results;
+                return results;
+            }
         }
     }
 }

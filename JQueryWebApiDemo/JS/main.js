@@ -16,7 +16,7 @@
         });
     };
 
-    function parseTasksResponse(tasksResponse, usersResponse) {
+    function parseTasksResponse(tasksResponse, usersResponse) {      
 
         var users = {}
 

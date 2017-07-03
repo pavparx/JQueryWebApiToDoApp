@@ -15,7 +15,7 @@ namespace Repos
             {
 
                 {
-                    Database.SetInitializer<DbAccess>(new CreateDatabaseIfNotExists<DbAccess>());
+                    Database.SetInitializer<DbAccess>(new DropCreateDatabaseAlways<DbAccess>());
 
                 }
             }

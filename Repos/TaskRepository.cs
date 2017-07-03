@@ -12,7 +12,6 @@ namespace Repos
     public class TaskRepository : ITaskRepository
     {
 
-
         DbContextClass.DbAccess Db = new DbContextClass.DbAccess();
 
         public List<Models.Task> GetTasks()
@@ -22,8 +21,11 @@ namespace Repos
                                             orderby data.Id
                                             select data;
 
+
             List<Models.Task> results = new List<Models.Task>(query);
             return results;
+
+            // return Db.Tasks.Where(t => t.Id.Equals(1)).OrderBy(d => d.Id).ToList();
         }
     }
 }

@@ -12,12 +12,12 @@ namespace JQueryWebApiDemo.Controllers
     [RoutePrefix("api/users")]
     public class UserController : ApiController
     {
-        private readonly IUserRepository _IRepoVar;
+        private readonly IUserRepository _usersRepo;
 
 
-        public UserController(IUserRepository IRepovar)
+        public UserController(IUserRepository usersRepo)
         {
-            _IRepoVar = IRepovar;
+            _usersRepo = usersRepo;
         }
 
 
@@ -26,8 +26,7 @@ namespace JQueryWebApiDemo.Controllers
         [Route]
         public List<User> GetUsers()
         {
-
-            return _IRepoVar.GetAll();
+            return _usersRepo.GetAll();
         }
     }
 }
