@@ -1,41 +1,69 @@
 ﻿(function () {
+
+    function getTasks() {
+        return $.ajax({
+            url: '/api/tasks',
+            type: 'GET',
+            dataType: 'json'
+        });
+    };
+
+    function getUsers() {
+        return $.ajax({
+            url: '/api/users',
+            type: 'GET',
+            dataType: 'json'
+        });
+    };
+
+    function parseTasksResponse(tasksResponse, usersResponse) {
+
+        var users = {}
+
+        for (var i = 0; i < usersResponse[0].length; i++) {
+            var current = usersResponse[0][i];
+            users[current.id] = current;
+        }
+
+        for (i = 0; i < tasksResponse[0].length; i++) {
+            var currentTask = tasksResponse[0][i];
+
+            if (currentTask.creatorId in users) {
+                currentTask.userName = users[currentTask.creatorId].name;
+            }
+        }
+
+        return tasksResponse[0];
+    };
+
     $(document).ready(function () {
+                   
+        $.when(getTasks(), getUsers())
+            .then(function (tasksResponse, usersResponse) {
+
+                querySucceeded(parseTasksResponse(tasksResponse, usersResponse));
+
+            }, queryFailed);
+
+        function querySucceeded(data) {            
              
+            displayTable(data);                        
 
-        var fetchedData; // Fetched tasks
-        
-        
+            $("#filterTasks").keyup(function () {
 
-        $.when(
-            $.ajax({
-                url: '/api/tasks',
-                type: 'GET',
-                dataType: 'json'
-            }),
-          $.ajax({
-              url: '/api/users',
-              type: 'GET',
-              dataType: 'json'
-          })).done(function (r1, r2) {
-              console.log(r1);
-              console.log(r2);
-              r1[0].userName;
-              for (i = 0; i < r1[0].length; i++) {
-                  for (j = 0; j < r2[0].length; j++) {
-                      if (r1[0][i].creatorId === r2[0][j].id) {
-                         r1[0][i].userName = r2[0][j].name;
-                          
-                      }
-                  }
-              }
-              
-          }).then(querySucceeded, queryFailed);
+                var tempArray = []; 
 
-        function querySucceeded(data) {
-            console.log(data);
-            displayTable(data);
+               var keyword = $(this).val();
+               
+               for (var i = 0; i < data.length;i++) {
+                   if ((data[i].name.indexOf(keyword) !== -1) || (data[i].description.indexOf(keyword) !== -1)) {
+                       tempArray.push(data[i]);
+                   }                                    
+               }
 
-            
+               displayTable(tempArray);
+
+           });
         }
 
         function queryFailed(jqXHR, textStatus) {
@@ -43,23 +71,7 @@
             console.log(msg);
         }
 
-        $("#filterTasks").keyup(function () {
-            var keyword = $(this).val();
-            console.log(keyword);
-            var tempArray = new Array();
-
-            for (item in fetchedData) {
-                if ((fetchedData[item].name.indexOf(keyword) !== -1) || (fetchedData[item].description.indexOf(keyword) !== -1)) {
-                    tempArray.push(fetchedData[item]);
-                }
-
-                displayTable(tempArray);
-            }
-        });
-
-        function displayTable(param) {
-
-            //var length = Object.keys(param).length;
+        function displayTable(param) {         
 
             // creates a <table> element and a <tbody> element
             var tbl = document.createElement("table");
@@ -103,28 +115,28 @@
                     var row = document.createElement("tr");
 
                     var cell = document.createElement("td");
-                    var cellText = document.createTextNode(param[0][i].id);
+                    var cellText = document.createTextNode(param[i].id);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
 
                     var cell1 = document.createElement("td");
-                    var cellText1 = document.createTextNode(param[0][i].userName);
+                    var cellText1 = document.createTextNode(param[i].userName);
                     cell1.appendChild(cellText1);
                     row.appendChild(cell1);
                     
 
                     var cell2 = document.createElement("td");
-                    var cellText2 = document.createTextNode(param[0][i].name);
+                    var cellText2 = document.createTextNode(param[i].name);
                     cell2.appendChild(cellText2);
                     row.appendChild(cell2);
 
                     var cell3 = document.createElement("td");
-                    var cellText3 = document.createTextNode(param[0][i].description);
+                    var cellText3 = document.createTextNode(param[i].description);
                     cell3.appendChild(cellText3);
                     row.appendChild(cell3);
 
                     var cell4 = document.createElement("td");
-                    var cellText4 = document.createTextNode(param[0][i].done);
+                    var cellText4 = document.createTextNode(param[i].done);
                     cell4.appendChild(cellText4);
                     row.appendChild(cell4);
 
@@ -144,5 +156,5 @@
         }
 
     });
-
+    
 })();
