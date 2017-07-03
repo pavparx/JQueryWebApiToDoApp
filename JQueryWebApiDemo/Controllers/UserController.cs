@@ -4,18 +4,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Models;
 using IRepositories;
+using Models;
 
 namespace JQueryWebApiDemo.Controllers
 {
-    [RoutePrefix("api/tasks")]
-    public class TaskListController : ApiController
+    [RoutePrefix("api/users")]
+    public class UserController : ApiController
     {
-        private readonly ITaskRepository _IRepoVar;
+        private readonly IUserRepository _IRepoVar;
 
 
-        public TaskListController(ITaskRepository IRepovar)
+        public UserController(IUserRepository IRepovar)
         {
             _IRepoVar = IRepovar;
         }
@@ -24,12 +24,10 @@ namespace JQueryWebApiDemo.Controllers
 
         [HttpGet]
         [Route]
-        public List<Task> GetTasks()
+        public List<User> GetUsers()
         {
 
-            return _IRepoVar.GetTasks();
+            return _IRepoVar.GetAll();
         }
-
-
     }
 }

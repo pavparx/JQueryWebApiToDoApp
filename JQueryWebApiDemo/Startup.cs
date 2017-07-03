@@ -3,6 +3,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using System.Web.Http;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace JQueryWebApiDemo
 {
@@ -11,6 +13,8 @@ namespace JQueryWebApiDemo
         public void Configuration(IAppBuilder appBuilder)
         {
             HttpConfiguration config = new HttpConfiguration();
+
+            UnityConfig.RegisterComponents(config);
 
             config.MapHttpAttributeRoutes();
 
