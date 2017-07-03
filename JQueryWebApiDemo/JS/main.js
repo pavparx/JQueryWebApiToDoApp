@@ -4,6 +4,7 @@
 
         var fetchedData; // Fetched tasks
         
+        
 
         $.when(
             $.ajax({
@@ -15,14 +16,25 @@
               url: '/api/users',
               type: 'GET',
               dataType: 'json'
-          })
-    ).then(querySucceeded).fail(queryFailed);
+          })).done(function (r1, r2) {
+              console.log(r1);
+              console.log(r2);
+              r1[0].userName;
+              for (i = 0; i < r1[0].length; i++) {
+                  for (j = 0; j < r2[0].length; j++) {
+                      if (r1[0][i].creatorId === r2[0][j].id) {
+                         r1[0][i].userName = r2[0][j].name;
+                          
+                      }
+                  }
+              }
+              
+          }).then(querySucceeded, queryFailed);
 
         function querySucceeded(data) {
             console.log(data);
-            var dataArray = data[0];
-            fetchedData = dataArray;
-            displayTable(dataArray);
+            displayTable(data);
+
             
         }
 
@@ -64,7 +76,7 @@
             titlerow.appendChild(titleid);
 
             var titleuserid = document.createElement("td");
-            var titleuseridtext = document.createTextNode('User ID');
+            var titleuseridtext = document.createTextNode('Creator Name');
             titleuserid.appendChild(titleuseridtext);
             titlerow.appendChild(titleuserid);
 
@@ -91,28 +103,28 @@
                     var row = document.createElement("tr");
 
                     var cell = document.createElement("td");
-                    var cellText = document.createTextNode(param[i].id);
+                    var cellText = document.createTextNode(param[0][i].id);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
 
                     var cell1 = document.createElement("td");
-                    var cellText1 = document.createTextNode(param[i].creatorID);
+                    var cellText1 = document.createTextNode(param[0][i].userName);
                     cell1.appendChild(cellText1);
                     row.appendChild(cell1);
                     
 
                     var cell2 = document.createElement("td");
-                    var cellText2 = document.createTextNode(param[i].name);
+                    var cellText2 = document.createTextNode(param[0][i].name);
                     cell2.appendChild(cellText2);
                     row.appendChild(cell2);
 
                     var cell3 = document.createElement("td");
-                    var cellText3 = document.createTextNode(param[i].description);
+                    var cellText3 = document.createTextNode(param[0][i].description);
                     cell3.appendChild(cellText3);
                     row.appendChild(cell3);
 
                     var cell4 = document.createElement("td");
-                    var cellText4 = document.createTextNode(param[i].done);
+                    var cellText4 = document.createTextNode(param[0][i].done);
                     cell4.appendChild(cellText4);
                     row.appendChild(cell4);
 
@@ -127,13 +139,9 @@
 
                     tbl.setAttribute("border", "2");
 
-
                 }
             
         }
-
-      
-        
 
     });
 

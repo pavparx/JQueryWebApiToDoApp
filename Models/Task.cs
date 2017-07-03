@@ -11,9 +11,9 @@ namespace Models
     public class Task
     {
         public int Id { get; set; }
-        [ForeignKey("user")]
-        public int creatorId { get; set; }
-        public User user { get; set; }
+        [ForeignKey("User")]
+        public int CreatorId { get; set; }
+        public User User { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Done { get; set; }

@@ -21,9 +21,9 @@ namespace Repos.Migrations
             //
             context.Tasks.AddOrUpdate(
               p => p.Name,
-              new Models.Task { Id = 1, creatorId = 1, Name = "First Task", Description = "First Description", Done = false },
-              new Models.Task { Id = 2, creatorId = 2, Name = "Second Task", Description = "Second Description", Done = false },
-              new Models.Task { Id = 3, creatorId = 3, Name = "Third Task", Description = "Third Description", Done = false }
+              new Models.Task { Id = 1, CreatorId = 1, Name = "First Task", Description = "First Description", Done = false },
+              new Models.Task { Id = 2, CreatorId = 2, Name = "Second Task", Description = "Second Description", Done = false },
+              new Models.Task { Id = 3, CreatorId = 3, Name = "Third Task", Description = "Third Description", Done = false }
 
             );
 
