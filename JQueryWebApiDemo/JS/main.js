@@ -1,46 +1,35 @@
 ﻿(function () {
-
-
-
     $(document).ready(function () {
-
-        var tasks = {
-            url: '/api/tasks',
-            type: 'GET',
-            dataType: 'json'
-        };
-
-        var users = {
-            url: '/api/users',
-            type: 'GET',
-            dataType: 'json'
-        };
+             
 
         var fetchedData; // Fetched tasks
-        var fetchedUsers; // Fetched users
+        
 
-        function getTasks() {
-            $.ajax(tasks).then(querySucceeded).fail(queryFailed);
-        }
-
-        function getUsers() {
-            $.ajax(users).then(querySucceeded2).fail(queryFailed);
-        }
-
-        function querySucceeded2(data) {
-            fetchedUsers = data;
-        }
+        $.when(
+            $.ajax({
+                url: '/api/tasks',
+                type: 'GET',
+                dataType: 'json'
+            }),
+          $.ajax({
+              url: '/api/users',
+              type: 'GET',
+              dataType: 'json'
+          })
+    ).then(querySucceeded).fail(queryFailed);
 
         function querySucceeded(data) {
-            fetchedData = data;
+            console.log(data);
+            var dataArray = data[0];
+            fetchedData = dataArray;
+            displayTable(dataArray);
+            
         }
 
         function queryFailed(jqXHR, textStatus) {
             var msg = 'Error retreiving data. ' + jqXHR + " " + textStatus;
             console.log(msg);
         }
-
-
 
         $("#filterTasks").keyup(function () {
             var keyword = $(this).val();
@@ -56,14 +45,9 @@
             }
         });
 
+        function displayTable(param) {
 
-
-
-
-
-        function displayTable(param, param2) {
-
-            var length = Object.keys(param).length;
+            //var length = Object.keys(param).length;
 
             // creates a <table> element and a <tbody> element
             var tbl = document.createElement("table");
@@ -103,7 +87,7 @@
 
             // creating all cells
             for (var i = 0; i < param.length; i++) {
-                for (var j = 0; j < param2.length; j++) {
+                
                     var row = document.createElement("tr");
 
                     var cell = document.createElement("td");
@@ -112,17 +96,10 @@
                     row.appendChild(cell);
 
                     var cell1 = document.createElement("td");
-                    var cellText1
-                    if (param[i].creatorId === param2[j].id) {
-                        
-                        cellText1 = document.createTextNode(param2[j].name);
-                        cell1.appendChild(cellText1);
-                        row.appendChild(cell1);
-                    } else {
-                        cellText1 = document.createTextNode("User Unknown");
-                        cell1.appendChild(cellText1);
-                        row.appendChild(cell1);
-                    }
+                    var cellText1 = document.createTextNode(param[i].creatorID);
+                    cell1.appendChild(cellText1);
+                    row.appendChild(cell1);
+                    
 
                     var cell2 = document.createElement("td");
                     var cellText2 = document.createTextNode(param[i].name);
@@ -152,13 +129,11 @@
 
 
                 }
-            }
+            
         }
 
-        getTasks();
-        getUsers();
-        displayTable(fetchedData, fetchedUsers);
-
+      
+        
 
     });
 
