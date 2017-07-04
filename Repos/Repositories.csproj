@@ -50,6 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContextClass.cs" />
+    <Compile Include="Migrations\201707040904148_InitialMigration.cs" />
+    <Compile Include="Migrations\201707040904148_InitialMigration.Designer.cs">
+      <DependentUpon>201707040904148_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707040915153_SeedTest.cs" />
+    <Compile Include="Migrations\201707040915153_SeedTest.Designer.cs">
+      <DependentUpon>201707040915153_SeedTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaskRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,7 +77,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.config.xml" />
+    <EmbeddedResource Include="Migrations\201707040904148_InitialMigration.resx">
+      <DependentUpon>201707040904148_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707040915153_SeedTest.resx">
+      <DependentUpon>201707040915153_SeedTest.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

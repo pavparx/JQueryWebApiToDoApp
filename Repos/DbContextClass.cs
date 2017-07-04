@@ -7,22 +7,20 @@ using System.Data.Entity;
 using Models;
 namespace Repos
 {
-    public class DbContextClass
+    public class DbContextClass : DbContext
     {
-        public class DbAccess : DbContext
+        public DbContextClass() : base("TasksDBNew")
         {
-            public DbAccess() : base("TaskDbConnection")
+
             {
+                Database.SetInitializer<DbContextClass>(new DropCreateDatabaseIfModelChanges<DbContextClass>());
 
-                {
-                    Database.SetInitializer<DbAccess>(new DropCreateDatabaseAlways<DbAccess>());
-
-                }
             }
-            public DbSet<Models.Task> Tasks { get; set; }
-            public DbSet<Models.User> Users { get; set; }
-
         }
+        public DbSet<Models.Task> Tasks { get; set; }
+        public DbSet<Models.User> Users { get; set; }
+
+
 
     }
 }

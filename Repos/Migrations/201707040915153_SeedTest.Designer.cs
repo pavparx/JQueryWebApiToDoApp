@@ -7,13 +7,13 @@ namespace Repos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CorrectedNamesInModel : IMigrationMetadata
+    public sealed partial class SeedTest : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CorrectedNamesInModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedTest));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707031244164_CorrectedNamesInModel"; }
+            get { return "201707040915153_SeedTest"; }
         }
         
         string IMigrationMetadata.Source

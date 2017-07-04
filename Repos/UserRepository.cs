@@ -14,7 +14,7 @@ namespace Repos
         public List<User> GetAll()
         {
 
-            using (DbContextClass.DbAccess Db = new DbContextClass.DbAccess())
+            using (DbContextClass Db = new DbContextClass())
             {
                 IQueryable<User> query = from data in Db.Users
                                          orderby data.Id

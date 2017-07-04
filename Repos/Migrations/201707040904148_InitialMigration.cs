@@ -3,10 +3,22 @@ namespace Repos.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UserModelAdded : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Tasks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        CreatorId = c.Int(nullable: false),
+                        Name = c.String(),
+                        Description = c.String(),
+                        Done = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.Users",
                 c => new
@@ -16,17 +28,12 @@ namespace Repos.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Tasks", "creatorId", c => c.Int(nullable: false));
-            CreateIndex("dbo.Tasks", "creatorId");
-            AddForeignKey("dbo.Tasks", "creatorId", "dbo.Users", "Id", cascadeDelete: true);
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Tasks", "creatorId", "dbo.Users");
-            DropIndex("dbo.Tasks", new[] { "creatorId" });
-            DropColumn("dbo.Tasks", "creatorId");
             DropTable("dbo.Users");
+            DropTable("dbo.Tasks");
         }
     }
 }

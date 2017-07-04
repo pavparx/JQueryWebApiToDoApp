@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <connectionStrings>
-    <add name="DbAccess" connectionString="Server=(localdb)\v11.0;Integrated Security=True; MultipleActiveResultSets=True;Initial Catalog=TasksDb;AttachDbFilename=|DataDirectory|TasksDb.mdf" providerName="System.Data.SqlClient" />
-  </connectionStrings>
-</configuration>
