@@ -27,6 +27,12 @@ namespace Repos.Migrations
             //    );
             //
 
+            context.Users.AddOrUpdate(
+            p => p.Id,
+            new Models.User { Id = 1, Name = "Mark" },
+            new Models.User { Id = 2, Name = "Karl" },
+            new Models.User { Id = 3, Name = "David" }
+          );
             context.Tasks.AddOrUpdate(
               p => p.Id,
               new Models.Task { Id = 1, CreatorId = 1, Name = "Groceries", Description = "Do the groceries", Done = false },
@@ -34,12 +40,7 @@ namespace Repos.Migrations
               new Models.Task { Id = 3, CreatorId = 3, Name = "Dog", Description = "Feed the dog", Done = false }
             );
 
-            context.Users.AddOrUpdate(
-             p => p.Id,
-             new Models.User { Id = 1, Name = "Mark" },
-             new Models.User { Id = 2, Name = "Karl" },
-             new Models.User { Id = 3, Name = "David" }
-           );
+
         }
     }
 }
