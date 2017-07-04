@@ -20,8 +20,6 @@ namespace JQueryWebApiDemo.Controllers
             _IRepoVar = IRepovar;
         }
 
-
-
         [HttpGet]
         [Route]
         public List<Task> GetTasks()

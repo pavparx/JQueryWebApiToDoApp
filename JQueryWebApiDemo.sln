@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRepositories", "IRepositor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityBootstrapper", "UnityBootstrapper\UnityBootstrapper.csproj", "{8118ED57-A018-4FB3-8969-208AB0AD0533}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoAppMVC", "ToDoAppMVC\ToDoAppMVC.csproj", "{83C6434A-221A-4D25-9C6E-EADF05F74957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8118ED57-A018-4FB3-8969-208AB0AD0533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8118ED57-A018-4FB3-8969-208AB0AD0533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8118ED57-A018-4FB3-8969-208AB0AD0533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C6434A-221A-4D25-9C6E-EADF05F74957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C6434A-221A-4D25-9C6E-EADF05F74957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C6434A-221A-4D25-9C6E-EADF05F74957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C6434A-221A-4D25-9C6E-EADF05F74957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

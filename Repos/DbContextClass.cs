@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Models;
 namespace Repos
 {
@@ -14,7 +15,7 @@ namespace Repos
 
             {
                 Database.SetInitializer<DbContextClass>(new DropCreateDatabaseIfModelChanges<DbContextClass>());
-
+                this.Configuration.ProxyCreationEnabled = false;
             }
         }
         public DbSet<Models.Task> Tasks { get; set; }
@@ -22,5 +23,10 @@ namespace Repos
 
 
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Models.Task>().HasRequired(t => t.User).WithRequiredDependent().Map(t => t.MapKey("CreatorId"));
+
+        //}
     }
 }
