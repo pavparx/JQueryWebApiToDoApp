@@ -11,7 +11,7 @@ namespace Repos
 {
     public class UserRepository : IUserRepository
     {
-        public List<User> GetAll()
+        public List<User> GetUsers()
         {
 
             using (DbContextClass Db = new DbContextClass())

@@ -8,6 +8,6 @@ namespace IRepositories
 {
     public interface IUserRepository
     {
-        List<User> GetAll();
+        List<User> GetUsers();
     }
 }

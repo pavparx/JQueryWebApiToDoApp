@@ -26,7 +26,7 @@ namespace JQueryWebApiDemo.Controllers
         [Route]
         public List<User> GetUsers()
         {
-            return _usersRepo.GetAll();
+            return _usersRepo.GetUsers();
         }
     }
 }

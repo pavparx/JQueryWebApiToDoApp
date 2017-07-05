@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using Models;
+﻿using System.Data.Entity;
 namespace Repos
 {
     public class DbContextClass : DbContext
@@ -14,7 +7,8 @@ namespace Repos
         {
 
             {
-                Database.SetInitializer<DbContextClass>(new DropCreateDatabaseIfModelChanges<DbContextClass>());
+                Database.SetInitializer<DbContextClass>(new DropCreateDatabaseAlways<DbContextClass>());
+                Database.Initialize(true);
                 this.Configuration.ProxyCreationEnabled = false;
             }
         }
