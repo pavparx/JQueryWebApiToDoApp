@@ -3,7 +3,7 @@ namespace Repos.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NullableUserId : DbMigration
+    public partial class Seeding : DbMigration
     {
         public override void Up()
         {

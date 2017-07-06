@@ -50,25 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContextClass.cs" />
-    <Compile Include="Migrations\201707040904148_InitialMigration.cs" />
-    <Compile Include="Migrations\201707040904148_InitialMigration.Designer.cs">
-      <DependentUpon>201707040904148_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201707060743359_Initial.cs" />
+    <Compile Include="Migrations\201707060743359_Initial.Designer.cs">
+      <DependentUpon>201707060743359_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707040915153_SeedTest.cs" />
-    <Compile Include="Migrations\201707040915153_SeedTest.Designer.cs">
-      <DependentUpon>201707040915153_SeedTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707040929151_NullableUserId.cs" />
-    <Compile Include="Migrations\201707040929151_NullableUserId.Designer.cs">
-      <DependentUpon>201707040929151_NullableUserId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707040936115_SeedTest2.cs" />
-    <Compile Include="Migrations\201707040936115_SeedTest2.Designer.cs">
-      <DependentUpon>201707040936115_SeedTest2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707041142031_UserAddedToTask.cs" />
-    <Compile Include="Migrations\201707041142031_UserAddedToTask.Designer.cs">
-      <DependentUpon>201707041142031_UserAddedToTask.cs</DependentUpon>
+    <Compile Include="Migrations\201707060748272_Seeding.cs" />
+    <Compile Include="Migrations\201707060748272_Seeding.Designer.cs">
+      <DependentUpon>201707060748272_Seeding.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaskRepository.cs" />
@@ -89,20 +77,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707040904148_InitialMigration.resx">
-      <DependentUpon>201707040904148_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707060743359_Initial.resx">
+      <DependentUpon>201707060743359_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707040915153_SeedTest.resx">
-      <DependentUpon>201707040915153_SeedTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707040929151_NullableUserId.resx">
-      <DependentUpon>201707040929151_NullableUserId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707040936115_SeedTest2.resx">
-      <DependentUpon>201707040936115_SeedTest2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707041142031_UserAddedToTask.resx">
-      <DependentUpon>201707041142031_UserAddedToTask.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707060748272_Seeding.resx">
+      <DependentUpon>201707060748272_Seeding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

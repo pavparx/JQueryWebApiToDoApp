@@ -7,13 +7,13 @@ namespace Repos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UserAddedToTask : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UserAddedToTask));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707041142031_UserAddedToTask"; }
+            get { return "201707060743359_Initial"; }
         }
         
         string IMigrationMetadata.Source

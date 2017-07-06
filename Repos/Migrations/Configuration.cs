@@ -1,16 +1,13 @@
 namespace Repos.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Repos.DbContextClass>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            
+
         }
 
         protected override void Seed(Repos.DbContextClass context)
@@ -27,8 +24,6 @@ namespace Repos.Migrations
               new Models.Task { Id = 2, CreatorId = 2, Name = "Laundry", Description = "Do the laundry", Done = false },
               new Models.Task { Id = 3, CreatorId = 3, Name = "Dog", Description = "Feed the dog", Done = false }
             );
-
-
         }
     }
 }
