@@ -21,8 +21,13 @@
         
         @foreach (var task in Model.Tasks)
         {
+            
         <tr>
             <td>@task.Id</td>
+            <td>@task.Creator.Name</td>
+            <td>@task.Name</td>
+            <td>@task.Description</td>
+            <td>@task.Done</td>
         </tr>
         }
     </tbody>
