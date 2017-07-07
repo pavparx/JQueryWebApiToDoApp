@@ -2,23 +2,28 @@
 using System.Web.Mvc;
 using ToDoAppMVC.ViewModels;
 
+
 namespace ToDoAppMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUserRepository _usersRepo;
+        
         private readonly ITaskRepository _tasksRepo;
-        public HomeController(ITaskRepository tasksRepo, IUserRepository usersRepo)
+        public HomeController(ITaskRepository tasksRepo)
         {
-            _tasksRepo = tasksRepo;
-            _usersRepo = usersRepo;
+            
+
+        _tasksRepo = tasksRepo;
+
         }
 
         // GET: Home
         public ActionResult Index()
 
         {
-            var model = new UsersAndTasksVM { Tasks = _tasksRepo.GetTasks(), Users = _usersRepo.GetUsers() };
+            var model = new TasksVM { Tasks = _tasksRepo.GetTasks() };
+            
+
             return View(model);
         }
     }

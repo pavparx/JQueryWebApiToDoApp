@@ -2,11 +2,8 @@
 
 namespace ToDoAppMVC.ViewModels
 {
-    public class UsersAndTasksVM
+    public class TasksVM
     {
-
         public List<Models.Task> Tasks { get; set; }
-        public List<Models.User> Users { get; set; }
-
     }
 }

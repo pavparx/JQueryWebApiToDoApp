@@ -1,13 +1,17 @@
 ﻿
-@model ToDoAppMVC.ViewModels.UsersAndTasksVM
+@model ToDoAppMVC.ViewModels.TasksVM
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>To Do App</h2>
-
-<table>
+<form>
+    Search for a task:<br>
+    <input size="100" type="text" name="searchTask"><br>
+    
+</form>
+<table border="1">
     <thead>
         <tr>
         <th>ID</th>
