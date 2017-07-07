@@ -7,13 +7,11 @@ namespace ToDoAppMVC.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         private readonly ITaskRepository _tasksRepo;
         public HomeController(ITaskRepository tasksRepo)
         {
-            
-
-        _tasksRepo = tasksRepo;
+            _tasksRepo = tasksRepo;
 
         }
 
@@ -22,7 +20,6 @@ namespace ToDoAppMVC.Controllers
 
         {
             var model = new TasksVM { Tasks = _tasksRepo.GetTasks() };
-            
 
             return View(model);
         }
