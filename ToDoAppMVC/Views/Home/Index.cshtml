@@ -28,20 +28,6 @@
 
         @foreach (var task in Model.Tasks)
         {
-
-            if (Model.Keyword != null)
-            {
-                if ((task.Name.Contains(Model.Keyword) || task.Description.Contains(Model.Keyword)))
-                {
-                    <tr>
-                        <td>@task.Id</td>
-                        <td>@task.Creator.Name</td>
-                        <td>@task.Name</td>
-                        <td>@task.Description</td>
-                        <td>@task.Done</td>
-                    </tr>
-                }
-            }
             <tr>
                 <td>@task.Id</td>
                 <td>@task.Creator.Name</td>

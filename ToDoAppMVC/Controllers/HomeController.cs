@@ -28,6 +28,7 @@ namespace ToDoAppMVC.Controllers
 
         public ActionResult SearchTask(string keyword)
         {
+
             var model = new TasksVM { Tasks = _tasksRepo.GetTasks() };
 
             List<Models.Task> tempList = new List<Models.Task>();
