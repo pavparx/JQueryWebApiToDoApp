@@ -6,33 +6,50 @@
 }
 
 <h2>To Do App</h2>
-<form>
-    Search for a task:<br>
-    <input size="100" type="text" name="searchTask"><br>
-    
-</form>
+
+@using (Html.BeginForm("SearchTask", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Keyword)
+    @Html.ValidationMessageFor(model => model.Keyword)
+    <button type="submit">Search</button>
+}
+
 <table border="1">
     <thead>
         <tr>
-        <th>ID</th>
-        <th>Creator Name</th>
-        <th>Task Name</th>
-        <th>Task Description</th>
-        <th>Completed</th>
+            <th>ID</th>
+            <th>Creator Name</th>
+            <th>Task Name</th>
+            <th>Task Description</th>
+            <th>Completed</th>
         </tr>
     </thead>
     <tbody>
-        
+
         @foreach (var task in Model.Tasks)
         {
-            
-        <tr>
-            <td>@task.Id</td>
-            <td>@task.Creator.Name</td>
-            <td>@task.Name</td>
-            <td>@task.Description</td>
-            <td>@task.Done</td>
-        </tr>
+
+            if (Model.Keyword != null)
+            {
+                if ((task.Name.Contains(Model.Keyword) || task.Description.Contains(Model.Keyword)))
+                {
+                    <tr>
+                        <td>@task.Id</td>
+                        <td>@task.Creator.Name</td>
+                        <td>@task.Name</td>
+                        <td>@task.Description</td>
+                        <td>@task.Done</td>
+                    </tr>
+                }
+            }
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Creator.Name</td>
+                <td>@task.Name</td>
+                <td>@task.Description</td>
+                <td>@task.Done</td>
+            </tr>
         }
+
     </tbody>
 </table>
