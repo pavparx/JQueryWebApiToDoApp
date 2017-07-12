@@ -76,12 +76,10 @@
 
             var $table = $("<table>");
             $table.attr("border", "1");
-            var $tr = $("<tr>");
-            var $td = $("<td>");
             var $tbody = $("<tbody>");
             var $thead = $("<thead>");
 
-            $thead.append($tr.html("<td>ID</td><td>Creator Name</td><td>Name</td><td>Description</td><td>Completed</td>"));
+            $thead.append($("<tr>").html("<td>ID</td><td>Creator Name</td><td>Name</td><td>Description</td><td>Completed</td>"));
             $table.append($thead);
 
             for (var i = 0; i < param.length; i++) {
@@ -96,7 +94,12 @@
                 //append($tdUserName).append($tdName).append($tdUserDescription).append($tdDone);
             }
             $table.append($tbody);
-            $('#tableDiv').append($table);
+            $('#results').append($table);
+
+            var results = $('#results');
+            results.empty();
+            results.append($table);
+
         }
 
         //// creating all cells
