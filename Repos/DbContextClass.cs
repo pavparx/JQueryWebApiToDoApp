@@ -4,7 +4,7 @@ namespace Repos
 {
     public class DbContextClass : DbContext
     {
-        public DbContextClass() : base("TasksDBNew")
+        public DbContextClass() : base("TasksDBNewC")
         {
 
             {

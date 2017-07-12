@@ -50,17 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContextClass.cs" />
-    <Compile Include="Migrations\201707060743359_Initial.cs" />
-    <Compile Include="Migrations\201707060743359_Initial.Designer.cs">
-      <DependentUpon>201707060743359_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201707121206335_Initial.cs" />
+    <Compile Include="Migrations\201707121206335_Initial.Designer.cs">
+      <DependentUpon>201707121206335_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707060748272_Seeding.cs" />
-    <Compile Include="Migrations\201707060748272_Seeding.Designer.cs">
-      <DependentUpon>201707060748272_Seeding.cs</DependentUpon>
+    <Compile Include="Migrations\201707121210028_Seeder.cs" />
+    <Compile Include="Migrations\201707121210028_Seeder.Designer.cs">
+      <DependentUpon>201707121210028_Seeder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707060832419_AddedRequiredFields.cs" />
-    <Compile Include="Migrations\201707060832419_AddedRequiredFields.Designer.cs">
-      <DependentUpon>201707060832419_AddedRequiredFields.cs</DependentUpon>
+    <Compile Include="Migrations\201707121211254_changedDbContext.cs" />
+    <Compile Include="Migrations\201707121211254_changedDbContext.Designer.cs">
+      <DependentUpon>201707121211254_changedDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaskRepository.cs" />
@@ -81,14 +81,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707060743359_Initial.resx">
-      <DependentUpon>201707060743359_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707121206335_Initial.resx">
+      <DependentUpon>201707121206335_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707060748272_Seeding.resx">
-      <DependentUpon>201707060748272_Seeding.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707121210028_Seeder.resx">
+      <DependentUpon>201707121210028_Seeder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707060832419_AddedRequiredFields.resx">
-      <DependentUpon>201707060832419_AddedRequiredFields.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707121211254_changedDbContext.resx">
+      <DependentUpon>201707121211254_changedDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

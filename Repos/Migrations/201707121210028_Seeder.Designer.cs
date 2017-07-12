@@ -7,13 +7,13 @@ namespace Repos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedRequiredFields : IMigrationMetadata
+    public sealed partial class Seeder : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRequiredFields));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Seeder));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707060832419_AddedRequiredFields"; }
+            get { return "201707121210028_Seeder"; }
         }
         
         string IMigrationMetadata.Source

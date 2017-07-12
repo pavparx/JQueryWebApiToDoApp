@@ -7,13 +7,13 @@ namespace Repos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Seeding : IMigrationMetadata
+    public sealed partial class changedDbContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Seeding));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changedDbContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707060748272_Seeding"; }
+            get { return "201707121211254_changedDbContext"; }
         }
         
         string IMigrationMetadata.Source

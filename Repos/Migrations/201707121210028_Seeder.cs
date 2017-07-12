@@ -3,7 +3,7 @@ namespace Repos.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Seeder : DbMigration
     {
         public override void Up()
         {
