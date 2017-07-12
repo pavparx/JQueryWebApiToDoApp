@@ -9,9 +9,29 @@
 	<h3>JQuery-WebApi Demo</h3>
 
 	<input type="text" id="filterTasks" />
-	<div id="results"></div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<div id="tabs">
+
+		<ul>
+			<li><a href="#allResults">All Results</a></li>
+			<li><a href="#filteredResults">Filtered Results</a></li>
+		</ul>
+
+		<div id="allResults">
+            <div id="results"></div>
+		</div>
+
+		<div id="filteredResults">
+			<p>Placeholder</p>
+		</div>
+	</div>
+		
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
 	<script type="text/javascript" src="../JS/main.js"></script>
 
 </body>
