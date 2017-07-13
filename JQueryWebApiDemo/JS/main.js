@@ -36,6 +36,13 @@
         return tasksResponse[0];
     };
 
+    $(window).load(function () {
+        $(".loading").fadeOut("slow");
+        $(".content").fadeIn("slow");
+        
+    });
+    
+   
     $(document).ready(function () {
 
         $(function () {
@@ -50,10 +57,10 @@
             }, queryFailed);
 
         function querySucceeded(data) {
-           
+
 
             $('#allResults').append(displayResults(data));
-            
+
 
             $("#filterTasks").keyup(function () {
 
@@ -62,7 +69,7 @@
                 var tempArray = [];
 
                 var keyword = $(this).val();
-                if (!keyword) { $('#filteredResults').empty();$("#tabs").tabs("option", "active", 0); } else {
+                if (!keyword) { $('#filteredResults').empty(); $("#tabs").tabs("option", "active", 0); } else {
                     for (var i = 0; i < data.length; i++) {
                         if ((data[i].name.indexOf(keyword) !== -1) || (data[i].description.indexOf(keyword) !== -1)) {
                             tempArray.push(data[i]);
@@ -70,7 +77,7 @@
                     }
                     $('#filteredResults').empty();
                     $('#filteredResults').append(displayResults(tempArray));
-                    
+
                 }
             });
         }
@@ -83,14 +90,14 @@
         function displayResults(param) {
 
             var $table = $("<table />");
-            $table.attr("border", "1");  
+            $table.attr("border", "1");
             var $tbody = $("<tbody>");
             var $thead = $("<thead>");
 
             $thead.append($("<tr>").html("<td>ID</td><td>Creator Name</td><td>Name</td><td>Description</td><td>Completed</td>"));
             $table.append($thead);
 
-            for (var i = 0; i < param.length; i++) { 
+            for (var i = 0; i < param.length; i++) {
                 var $tr = $("<tr>");
                 $("<td />").text(param[i].id).appendTo($tr);
                 $("<td />").text(param[i].userName).appendTo($tr);
@@ -103,8 +110,8 @@
             $table.append($tbody);
             return $table;
         }
-      
-        
+
+
 
     });
 })();

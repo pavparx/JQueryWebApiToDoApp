@@ -6,29 +6,31 @@
 
 </head>
 <body>
-	<h3>JQuery-WebApi Demo</h3>
+    <div class="loading"><p>Loading</p><img src="https://i0.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48" alt="Loading Gif" style="width:2%;height:2%;vertical-align:middle;"></div>
+    <div class="content" style="display: none;">
+        <h3>JQuery-WebApi Demo</h3>
+        
+        <input type="text" id="filterTasks" />
 
-	<input type="text" id="filterTasks" />
+        <div id="tabs">
 
-	<div id="tabs">
+            <ul>
+                <li><a href="#allResults">All Results</a></li>
+                <li><a href="#filteredResults">Filtered Results</a></li>
+            </ul>
 
-		<ul>
-			<li><a href="#allResults">All Results</a></li>
-			<li><a href="#filteredResults">Filtered Results</a></li>
-		</ul>
+            <div id="allResults"></div>
+            <div id="filteredResults"></div>
 
-		<div id="allResults"></div>
-		<div id="filteredResults"></div>
+        </div>
 
-	</div>
-		
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
-	<script type="text/javascript" src="../JS/main.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+        <script type="text/javascript" src="../JS/main.js"></script>
+</div>
 </body>
 </html>
