@@ -36,19 +36,8 @@
         return tasksResponse[0];
     };
 
-    $(window).load(function () {
-        $(".loading").fadeOut("slow");
-        $(".content").fadeIn("slow");
-        
-    });
-    
-   
-    $(document).ready(function () {
-
-        $(function () {
-            $("#tabs").tabs();
-        });
-
+    $("#tabs").tabs();
+     
         $.when(getTasks(), getUsers())
             .then(function (tasksResponse, usersResponse) {
 
@@ -57,28 +46,26 @@
             }, queryFailed);
 
         function querySucceeded(data) {
-
-
-            $('#allResults').append(displayResults(data));
-
+            $("#tabs").tabs("option", "active", 0);
+            $('#allResults').append(createTableResults(data));
+            $(".loading").fadeOut();
+            $(".content").fadeIn();
 
             $("#filterTasks").keyup(function () {
-
-                $("#tabs").tabs("option", "active", 1);
-
                 var tempArray = [];
-
                 var keyword = $(this).val();
                 if (!keyword) { $('#filteredResults').empty(); $("#tabs").tabs("option", "active", 0); } else {
+                    $("#tabs").tabs("option", "active", 1);
                     for (var i = 0; i < data.length; i++) {
                         if ((data[i].name.indexOf(keyword) !== -1) || (data[i].description.indexOf(keyword) !== -1)) {
                             tempArray.push(data[i]);
                         }
                     }
                     $('#filteredResults').empty();
-                    $('#filteredResults').append(displayResults(tempArray));
-
+                    $('#filteredResults').append(createTableResults(tempArray));
+                    
                 }
+               
             });
         }
 
@@ -87,7 +74,7 @@
             console.log(msg);
         }
 
-        function displayResults(param) {
+        function createTableResults(param) {
 
             var $table = $("<table />");
             $table.attr("border", "1");
@@ -113,5 +100,4 @@
 
 
 
-    });
 })();
