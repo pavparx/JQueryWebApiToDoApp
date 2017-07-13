@@ -53,7 +53,7 @@
            
 
             $('#allResults').append(displayResults(data));
-            $('#filteredResults').append(displayResults(data));
+            
 
             $("#filterTasks").keyup(function () {
 
@@ -62,7 +62,7 @@
                 var tempArray = [];
 
                 var keyword = $(this).val();
-                if (!keyword) { $("#tabs").tabs("option", "active", 0);$('#filteredResults').empty(); $('#filteredResults').append(displayResults(data)); } else {
+                if (!keyword) { $('#filteredResults').empty();$("#tabs").tabs("option", "active", 0); } else {
                     for (var i = 0; i < data.length; i++) {
                         if ((data[i].name.indexOf(keyword) !== -1) || (data[i].description.indexOf(keyword) !== -1)) {
                             tempArray.push(data[i]);
